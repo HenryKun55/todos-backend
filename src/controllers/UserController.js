@@ -6,6 +6,15 @@ class UserController {
         return res.json(user)
     }
 
+    async login(res, res){
+        const user = await User.find({
+            username: req.body.username,
+            password: req.body.passowrd
+        })
+
+        res.json(user)
+    }
+
     async show(req, res) {
         const user = await User.findById(req.params.id).populate(
             {
