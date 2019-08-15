@@ -7,7 +7,7 @@ class UserController {
     }
 
     async login(req, res){
-        const user = await User.find({
+        const user = await User.findOne({
             username: req.body.username,
             password: req.body.password
         })
