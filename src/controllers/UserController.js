@@ -15,6 +15,12 @@ class UserController {
         res.json(user)
     }
 
+    async get(req, res){
+        const user = await User.findById(req.body._id)
+
+        res.json(user)
+    }
+
     async show(req, res) {
         const user = await User.findById(req.params.id).populate(
             {
