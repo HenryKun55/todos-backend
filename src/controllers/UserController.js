@@ -9,7 +9,7 @@ class UserController {
     async login(req, res){
         const user = await User.find({
             username: req.body.username,
-            password: req.body.passowrd
+            password: req.body.password
         })
 
         res.json(user)
